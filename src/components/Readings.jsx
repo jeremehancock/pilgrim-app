@@ -55,7 +55,7 @@ const Readings = () => {
       <Typography sx={{ typography: { xs: 'h3', md: 'h2' }, mb: 5 }}>
         First Reading
       </Typography>
-      <Typography sx={{ typography: { xs: 'h5', md: 'h4' }, mb: 3 }}>
+      <Typography sx={{ typography: { xs: 'h4', md: 'h4' }, mb: 3 }}>
         {data ? formatText(data.Mass_R1.source) : ''}
       </Typography>
       <Typography sx={{ typography: { xs: 'h5', md: 'h5' }, mb: 5 }}>
@@ -64,7 +64,7 @@ const Readings = () => {
       <Typography sx={{ typography: { xs: 'h3', md: 'h2' }, mb: 5 }}>
         Responsorial Psalm
       </Typography>
-      <Typography sx={{ typography: { xs: 'h5', md: 'h4' }, mb: 3 }}>
+      <Typography sx={{ typography: { xs: 'h4', md: 'h4' }, mb: 3 }}>
         {data ? formatText(data.Mass_Ps.source) : ''}
       </Typography>
       <Typography sx={{ typography: { xs: 'h5', md: 'h5' }, mb: 5 }}>
@@ -75,10 +75,10 @@ const Readings = () => {
           <Typography sx={{ typography: { xs: 'h3', md: 'h2' }, mb: 5 }}>
             Second Reading
           </Typography>
-          <Typography sx={{ typography: { xs: 'h4', md: 'h3' }, mb: 3 }}>
+          <Typography sx={{ typography: { xs: 'h4', md: 'h4' }, mb: 3 }}>
             {data ? formatText(data.Mass_R2.source) : ''}
           </Typography>
-          <Typography sx={{ mb: 3 }}>
+          <Typography sx={{ typography: { xs: 'h5', md: 'h5' }, mb: 3 }}>
             {data ? formatText(data.Mass_R2.text) : ''}
           </Typography>
         </Box>
