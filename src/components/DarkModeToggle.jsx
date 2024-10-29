@@ -6,6 +6,7 @@ import Darkmode from 'darkmode-js';
 const DarkModeToggle = () => {
   useEffect(() => {
     const darkmode = new Darkmode({
+      top: '10px',
       left: 'unset',
       time: '0.5s',
       label: '🌓',
@@ -21,6 +22,7 @@ const DarkModeToggle = () => {
       }
       .darkmode-toggle, .darkmode-layer, .darkmode-layer--button {
         bottom: unset;
+        top: 20px;
       }
     `;
     document.head.appendChild(style);
