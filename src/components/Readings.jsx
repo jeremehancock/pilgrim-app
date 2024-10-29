@@ -30,7 +30,7 @@ const Readings = () => {
     return string.replace(/Alleluia/g, '<b>R:</b> Alleluia')
   };
 
-  const removeIndent = (string) => {
+  const removeFormatting = (string) => {
     return string.replace(
       /(style="[^"]*)\btext-indent\s*:\s*[^;]+;?\s*/gi,
       '$1'
@@ -40,30 +40,36 @@ const Readings = () => {
     ).replace(/style="\s*"/gi, 'style=""').replace(/\s*style=""/gi, '').replace(
       /(style="[^"]*)\bmargin-top\s*:\s*[^;]+;?\s*/gi,
       '$1'
+    ).replace(/style="\s*"/gi, 'style=""').replace(/\s*style=""/gi, '').replace(
+      /(style="[^"]*)\bfont-size\s*:\s*[^;]+;?\s*/gi,
+      '$1'
+    ).replace(/style="\s*"/gi, 'style=""').replace(/\s*style=""/gi, '').replace(
+      /(style="[^"]*)\bcolor\s*:\s*[^;]+;?\s*/gi,
+      '$1'
     ).replace(/style="\s*"/gi, 'style=""').replace(/\s*style=""/gi, '')
   };
   
   return (
-    <Stack>
+    data ? (<Stack>
       <Typography sx={{ typography: { xs: 'h3', md: 'h1' }, mb: 5 }}>{data ? formatText(data.date) : ''}</Typography>
-      <Typography sx={{ typography: { xs: 'h4', md: 'h2' }, mb: 5 }}>{data ? formatText(removeIndent(data.day)) : ''}</Typography>
+      <Typography sx={{ typography: { xs: 'h4', md: 'h2' }, mb: 5 }}>{data ? formatText(removeFormatting(data.day)) : ''}</Typography>
       <Typography sx={{ typography: { xs: 'h3', md: 'h2' }, mb: 5 }}>First Reading</Typography>
       <Typography sx={{ typography: { xs: 'h4', md: 'h3' }, mb: 3 }}>{data ? formatText(data.Mass_R1.source) : ''}</Typography>
       <Typography sx={{ mb: 5 }}>{data ? formatText(data.Mass_R1.text) : ''}</Typography>
       <Typography sx={{ typography: { xs: 'h3', md: 'h2' }, mb: 5 }}>Responsorial Psalm</Typography>
       <Typography sx={{ typography: { xs: 'h4', md: 'h3' }, mb: 3 }}>{data ? formatText(data.Mass_Ps.source) : ''}</Typography>
-      <Typography sx={{ mb: 5 }}>{data ? formatText(addResponse(removeIndent(data.Mass_Ps.text))) : ''}</Typography>
+      <Typography sx={{ mb: 5 }}>{data ? formatText(addResponse(removeFormatting(data.Mass_Ps.text))) : ''}</Typography>
       {data?.Mass_R2 && (<Box><Typography sx={{ typography: { xs: 'h3', md: 'h2' }, mb: 5 }}>Second Reading</Typography>
       <Typography sx={{ typography: { xs: 'h4', md: 'h3' }, mb: 3 }}>{data ? formatText(data.Mass_R2.source) : ''}</Typography>
       <Typography sx={{ mb: 3 }}>{data ? formatText(data.Mass_R2.text) : ''}</Typography></Box>)}
       <Typography sx={{ typography: { xs: 'h3', md: 'h2' }, mb: 5 }}>Alleluia</Typography>
       <Typography sx={{ typography: { xs: 'h4', md: 'h3' }, mb: 3 }}>{data ? formatText(data.Mass_GA.source) : ''}</Typography>
-      <Typography sx={{ mb: 5 }}>{data ? formatText(addResponseToAlleluia(removeIndent(data.Mass_GA.text))) : ''}</Typography>
+      <Typography sx={{ mb: 5 }}>{data ? formatText(addResponseToAlleluia(removeFormatting(data.Mass_GA.text))) : ''}</Typography>
       <Typography sx={{ typography: { xs: 'h3', md: 'h2' }, mb: 5 }}>Gospel</Typography>
       <Typography sx={{ typography: { xs: 'h4', md: 'h3' }, mb: 3 }}>{data ? formatText(data.Mass_G.source) : ''}</Typography>
-      <Typography sx={{ mb: 3  }}>{data ? formatText(data.Mass_G.text) : ''}</Typography>
-      <Typography variant='body2'>{data ? formatText(data.copyright.text) : ''}</Typography>
-    </Stack>
+      <Typography sx={{ mb: 10  }}>{data ? formatText(data.Mass_G.text) : ''}</Typography>
+      <Typography variant='label' fontSize={11}>{data ? formatText(removeFormatting(data.copyright.text)) : ''}</Typography>
+    </Stack>) : ''
   );
 };
 
