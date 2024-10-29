@@ -42,7 +42,7 @@ const Readings = () => {
       <Typography sx={{ typography: { xs: 'h3', md: 'h2' }, mb: 5 }}>Today's Gospel</Typography>
       <Typography sx={{ typography: { xs: 'h4', md: 'h3' }, mb: 3 }}>{data ? formatText(data.Mass_G.source) : ''}</Typography>
       <Typography sx={{ typography: { xs: 'h5', md: 'h4' }, mb: 3  }}>{data ? formatText(data.Mass_G.text) : ''}</Typography>
-      <Typography variant='label'>{data ? formatText(data.copyright.text) : ''}</Typography>
+      <Typography variant='label' fontSize={12}>{data ? formatText(data.copyright.text) : ''}</Typography>
       {/* {data ? <pre>{JSON.stringify(data}</pre> : 'Loading'} */}
     </Stack>
   );
