@@ -11,7 +11,7 @@ const Readings = () => {
     if (typeof window !== "undefined") {
       fetchReadings()
         .then((json) => setData(json))
-        .catch((error) => console.error("Error fetching Readings data:", error));
+        .catch((error) => console.error("Error fetching Readings:", error));
     }
   }, []);
 
