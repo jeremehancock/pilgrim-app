@@ -17,9 +17,11 @@ const DarkModeToggle = () => {
     // Add CSS override to ignore dark mode for certain elements
     const style = document.createElement('style');
     style.innerHTML = `
+      body.darkmode--activated {
+        background-color: black !important;
+      }
       body.darkmode--activated .response-dark-mode {
         color: darkcyan !important;
-        background-color: white !important;
       }
       .darkmode-toggle, .darkmode-layer, .darkmode-layer--button {
         bottom: unset;
