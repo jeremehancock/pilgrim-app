@@ -36,7 +36,7 @@ const Readings = () => {
       {data?.Mass_R2 && (<Box><Typography sx={{ typography: { xs: 'h3', md: 'h2' }, mb: 5 }}>Second Reading</Typography>
       <Typography sx={{ typography: { xs: 'h4', md: 'h3' }, mb: 3 }}>{data ? formatText(data.Mass_R2.source) : ''}</Typography>
       <Typography sx={{ typography: { xs: 'h5', md: 'h4' }, mb: 3 }}>{data ? formatText(data.Mass_R2.text) : ''}</Typography></Box>)}
-      <Typography sx={{ typography: { xs: 'h3', md: 'h2' }, mb: 3 }}>Today's Gospel Accamation</Typography>
+      <Typography sx={{ typography: { xs: 'h3', md: 'h2' }, mb: 5 }}>Today's Gospel Acclamation</Typography>
       <Typography sx={{ typography: { xs: 'h4', md: 'h3' }, mb: 3 }}>{data ? formatText(data.Mass_GA.source) : ''}</Typography>
       <Typography sx={{ typography: { xs: 'h5', md: 'h4' }, mb: 5 }}>{data ? formatText(data.Mass_GA.text) : ''}</Typography>
       <Typography sx={{ typography: { xs: 'h3', md: 'h2' }, mb: 5 }}>Today's Gospel</Typography>
