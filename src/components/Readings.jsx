@@ -24,8 +24,8 @@ const Readings = () => {
       .replace(/(style="[^"]*)\bmargin-left\s*:\s*[^;]+;?\s*/gi, '$1')
       .replace(/style="\s*"/gi, 'style=""')
       .replace(/\s*style=""/gi, '')
-      .replace(/(style="[^"]*)\bmargin-top\s*:\s*[^;]+;?\s*/gi, '$1')
-      .replace(/style="\s*"/gi, 'style=""')
+      // .replace(/(style="[^"]*)\bmargin-top\s*:\s*[^;]+;?\s*/gi, '$1')
+      // .replace(/style="\s*"/gi, 'style=""')
       .replace(/\s*style=""/gi, '')
       .replace(/(style="[^"]*)\bfont-size\s*:\s*[^;]+;?\s*/gi, '$1')
       .replace(/style="\s*"/gi, 'style=""')
@@ -53,21 +53,21 @@ const Readings = () => {
         {data ? formatText(data.day) : ''}
       </Typography>
       <Typography sx={{ typography: { xs: 'h3', md: 'h2' }, mb: 5 }}>
-        {data.Mass_R2 && 'First'} Reading
+        First Reading
       </Typography>
-      <Typography sx={{ typography: { xs: 'h4', md: 'h3' }, mb: 3 }}>
+      <Typography sx={{ typography: { xs: 'h5', md: 'h4' }, mb: 3 }}>
         {data ? formatText(data.Mass_R1.source) : ''}
       </Typography>
-      <Typography sx={{ mb: 5 }}>
+      <Typography sx={{ typography: { xs: 'h5', md: 'h5' }, mb: 5 }}>
         {data ? formatText(data.Mass_R1.text) : ''}
       </Typography>
       <Typography sx={{ typography: { xs: 'h3', md: 'h2' }, mb: 5 }}>
         Responsorial Psalm
       </Typography>
-      <Typography sx={{ typography: { xs: 'h4', md: 'h3' }, mb: 3 }}>
+      <Typography sx={{ typography: { xs: 'h5', md: 'h4' }, mb: 3 }}>
         {data ? formatText(data.Mass_Ps.source) : ''}
       </Typography>
-      <Typography sx={{ mb: 5 }}>
+      <Typography sx={{ typography: { xs: 'h5', md: 'h5' }, mb: 5 }}>
         {data ? formatText(addResponse(data.Mass_Ps.text)) : ''}
       </Typography>
       {data.Mass_R2 && (
@@ -83,7 +83,7 @@ const Readings = () => {
           </Typography>
         </Box>
       )}
-      <Typography sx={{ typography: { xs: 'h3', md: 'h2' }, mb: 5 }}>
+      {/* <Typography sx={{ typography: { xs: 'h3', md: 'h2' }, mb: 5 }}>
         Alleluia
       </Typography>
       <Typography sx={{ typography: { xs: 'h4', md: 'h3' }, mb: 3 }}>
@@ -91,14 +91,14 @@ const Readings = () => {
       </Typography>
       <Typography sx={{ mb: 5 }}>
         {data ? formatText(addResponseToAlleluia(data.Mass_GA.text)) : ''}
-      </Typography>
+      </Typography> */}
       <Typography sx={{ typography: { xs: 'h3', md: 'h2' }, mb: 5 }}>
         Gospel
       </Typography>
-      <Typography sx={{ typography: { xs: 'h4', md: 'h3' }, mb: 3 }}>
+      <Typography sx={{ typography: { xs: 'h5', md: 'h4' }, mb: 3 }}>
         {data ? formatText(data.Mass_G.source) : ''}
       </Typography>
-      <Typography sx={{ mb: 10 }}>
+      <Typography sx={{ typography: { xs: 'h5', md: 'h5' }, mb: 10 }}>
         {data ? formatText(data.Mass_G.text) : ''}
       </Typography>
       <Typography variant="label" fontSize={11}>
