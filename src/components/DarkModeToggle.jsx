@@ -22,7 +22,6 @@ const DarkModeToggle = () => {
       }
       .darkmode-toggle, .darkmode-layer, .darkmode-layer--button {
         bottom: unset;
-        top: 20px;
       }
     `;
     document.head.appendChild(style);
