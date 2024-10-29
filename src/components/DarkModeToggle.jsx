@@ -19,7 +19,6 @@ const DarkModeToggle = () => {
     style.innerHTML = `
       body.darkmode--activated {
         background-color: black !important;
-        min-height: 100%;
       }
       body.darkmode--activated .response-dark-mode {
         color: darkcyan !important;
