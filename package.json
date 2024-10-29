@@ -24,6 +24,7 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "darkmode-js": "^1.5.7",
     "eslint": "latest",
     "eslint-config-next": "latest",
     "eslint-config-prettier": "^9.1.0",
