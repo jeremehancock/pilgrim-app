@@ -46,7 +46,7 @@ const Readings = () => {
   return (
     <Stack>
       <Typography sx={{ typography: { xs: 'h3', md: 'h1' }, mb: 5 }}>{data ? formatText(data.date) : ''}</Typography>
-      <Typography sx={{ typography: { xs: 'h4', md: 'h2' }, mb: 5 }}>Today's Feast: {data ? formatText(data.day) : ''}</Typography>
+      <Typography sx={{ typography: { xs: 'h4', md: 'h2' }, mb: 5 }}>{data ? formatText(data.day) : ''}</Typography>
       <Typography sx={{ typography: { xs: 'h3', md: 'h2' }, mb: 5 }}>First Reading</Typography>
       <Typography sx={{ typography: { xs: 'h4', md: 'h3' }, mb: 3 }}>{data ? formatText(data.Mass_R1.source) : ''}</Typography>
       <Typography sx={{ mb: 5 }}>{data ? formatText(data.Mass_R1.text) : ''}</Typography>
