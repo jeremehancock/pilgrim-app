@@ -37,6 +37,9 @@ const Readings = () => {
     ).replace(/style="\s*"/gi, 'style=""').replace(/\s*style=""/gi, '').replace(
       /(style="[^"]*)\bmargin-left\s*:\s*[^;]+;?\s*/gi,
       '$1'
+    ).replace(/style="\s*"/gi, 'style=""').replace(/\s*style=""/gi, '').replace(
+      /(style="[^"]*)\bmargin-top\s*:\s*[^;]+;?\s*/gi,
+      '$1'
     ).replace(/style="\s*"/gi, 'style=""').replace(/\s*style=""/gi, '')
   };
   
