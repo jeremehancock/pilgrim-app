@@ -6,14 +6,28 @@ import Darkmode from 'darkmode-js';
 const DarkModeToggle = () => {
   useEffect(() => {
     const darkmode = new Darkmode({
-      bottom: '64px', // default: '32px'
-      right: '32px', // default: '32px'
-      left: 'unset', // default: 'unset'
-      time: '0.5s', // default: '0.3s'
-      label: '🌓', // default: ''
-      autoMatchOsTheme: true, // default: true
+      bottom: '64px',
+      right: '32px',
+      left: 'unset',
+      time: '0.5s',
+      label: '🌓',
+      autoMatchOsTheme: true,
     });
     darkmode.showWidget();
+
+    // Add CSS override to ignore dark mode for certain elements
+    const style = document.createElement('style');
+    style.innerHTML = `
+      body.darkmode--activated .response-dark-mode {
+        color: darkcyan !important;
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Cleanup the style tag on component unmount
+    return () => {
+      document.head.removeChild(style);
+    };
   }, []);
 
   return null;

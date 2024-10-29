@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { fetchReadings } from '@/lib/fetchReadings';
 import { Box, Stack, Typography } from '@mui/material';
+import styles from '@/components/ResponseColor.module.css';
 
 const Readings = () => {
   const [data, setData] = useState(null);
@@ -36,12 +37,11 @@ const Readings = () => {
     return <span dangerouslySetInnerHTML={{ __html: string }} />;
   };
 
-  const addResponse = (string) => {
-    return string.replace(/<i>/g, '<i> <b>R:</b> ');
-  };
-
-  const addResponseToAlleluia = (string) => {
-    return string.replace(/Alleluia/g, '<b>R:</b> Alleluia');
+  const formatResponse = (string) => {
+    return string.replace(
+      /<i>/g,
+      `<div class="${styles.responseColor} response-dark-mode"><i>`,
+    );
   };
 
   return data ? (
@@ -68,7 +68,7 @@ const Readings = () => {
         {data ? formatText(data.Mass_Ps.source) : ''}
       </Typography>
       <Typography sx={{ typography: { xs: 'h5', md: 'h5' }, mb: 5 }}>
-        {data ? formatText(addResponse(data.Mass_Ps.text)) : ''}
+        {data ? formatText(formatResponse(data.Mass_Ps.text)) : ''}
       </Typography>
       {data.Mass_R2 && (
         <Box>
