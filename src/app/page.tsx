@@ -10,7 +10,7 @@ import Readings from '@/components/Readings';
 
 export default function Home() {
   return (
-    <Container maxWidth="lg">
+    <Container>
       <Box 
         sx={{
           my: 4,
