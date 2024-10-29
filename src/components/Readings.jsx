@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { fetchReadings } from '@/lib/fetchReadings';
-import { Stack, Typography } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 
 const Readings = () => {
   const [data, setData] = useState(null);
