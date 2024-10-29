@@ -95,7 +95,7 @@ const Readings = () => {
       <Typography sx={{ typography: { xs: 'h3', md: 'h2' }, mb: 5 }}>
         Gospel
       </Typography>
-      <Typography sx={{ typography: { xs: 'h5', md: 'h4' }, mb: 3 }}>
+      <Typography sx={{ typography: { xs: 'h4', md: 'h4' }, mb: 3 }}>
         {data ? formatText(data.Mass_G.source) : ''}
       </Typography>
       <Typography sx={{ typography: { xs: 'h5', md: 'h5' }, mb: 10 }}>
