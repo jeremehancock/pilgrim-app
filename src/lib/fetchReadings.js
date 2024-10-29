@@ -1,8 +1,8 @@
 export async function fetchReadings() {
   return new Promise((resolve, reject) => {
     const script = document.createElement('script');
-    const uniqueCallbackName = "universalisCallback";
-    
+    const uniqueCallbackName = 'universalisCallback';
+
     const today = new Date();
     const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
@@ -16,7 +16,7 @@ export async function fetchReadings() {
     // Define the callback function that will be invoked by the JSONP response
     window[uniqueCallbackName] = (data) => {
       resolve(data);
-      console.log('data', data)
+      console.log('data', data);
       // Clean up: remove the script and callback
       delete window[uniqueCallbackName];
       document.body.removeChild(script);

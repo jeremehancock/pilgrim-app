@@ -6,7 +6,7 @@ import Readings from '@/components/Readings';
 export default function Home() {
   return (
     <Container>
-      <Box 
+      <Box
         sx={{
           my: 4,
           display: 'flex',
