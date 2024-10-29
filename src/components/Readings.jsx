@@ -16,6 +16,7 @@ const Readings = () => {
   }, []);
 
   const formatText = (string) => {
+    string = string.replace(/&#160;/g, '');
     return (
       <span dangerouslySetInnerHTML={{ __html: string }} />
     );
@@ -28,7 +29,7 @@ const Readings = () => {
     ).replace(/style="\s*"/gi, 'style=""').replace(/\s*style=""/gi, '').replace(
       /(style="[^"]*)\bmargin-left\s*:\s*[^;]+;?\s*/gi,
       '$1'
-    ).replace(/style="\s*"/gi, 'style=""').replace(/\s*style=""/gi, '').replace(/&#160;/g, '');
+    ).replace(/style="\s*"/gi, 'style=""').replace(/\s*style=""/gi, '')
   };
   
   return (
