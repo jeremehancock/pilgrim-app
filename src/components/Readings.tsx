@@ -40,6 +40,8 @@ const Readings = () => {
       .replace(/(style="[^"]*)\bfont-size\s*:\s*[^;]+;?\s*/gi, '$1')
       .replace(/style="\s*"/gi, 'style=""')
       .replace(/\s*style=""/gi, '')
+      .replace(/(style="[^"]*)\btext-align\s*:\s*[^;]+;?\s*/gi, '$1')
+      .replace(/style="\s*"/gi, 'style=""')
       .replace(/(style="[^"]*)\bcolor\s*:\s*[^;]+;?\s*/gi, '$1')
       .replace(/style="\s*"/gi, 'style=""')
       .replace(/\s*style=""/gi, '');
